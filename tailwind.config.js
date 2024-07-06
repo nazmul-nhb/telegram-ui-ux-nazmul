@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        telegram: '#2ba3df',
+      },
+    },
   },
   plugins: [],
 };
