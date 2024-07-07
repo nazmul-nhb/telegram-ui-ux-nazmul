@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaBars, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 import ToggleTheme from './ToggleTheme';
+import { HiBars3 } from 'react-icons/hi2';
 
 const Menubar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -25,26 +26,26 @@ const Menubar = () => {
     }, [menubarRef]);
 
     return (
-        <div className={`text-gray-400 p-2 h-14`}>
+        <div className={`p-2 h-14 bg-sideBG`}>
             {/* Sandwich Menu Icon */}
             <div className="flex items-center gap-2">
                 <div ref={menubarRef}>
-                    <FaBars className="text-2xl cursor-pointer" onClick={toggleMenu} />
+                    <HiBars3 className="w-11 h-11 text-2xl cursor-pointer rounded-full p-2 hover:bg-[#2b2b2b75] flex-1" onClick={toggleMenu} />
                     {/* Dropdown Menu */}
                     {showMenu && (
-                        <div className={`absolute top-12 left-2 w-80 mt-1 bg-white border border-gray-200 rounded shadow-lg select-none`}>
+                        <div className={`absolute top-12 left-2 w-80 mt-1 bg-sideBG shadow-sm shadow-gray-600 rounded-lg select-none`}>
                             <ul>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Saved Messages</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Archived Chats</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">My Stories</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Contacts</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Settings</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 flex items-center justify-between gap-3">Dark Mode <ToggleTheme /></li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Animations</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Telegram Features</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Report Bug</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Switch to A version</li>
-                                <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Install App</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Saved Messages</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Archived Chats</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">My Stories</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Contacts</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Settings</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 flex items-center justify-between gap-3">Dark Mode <ToggleTheme /></li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Animations</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Telegram Features</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Report Bug</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Switch to A version</li>
+                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Install App</li>
                             </ul>
                         </div>
                     )}

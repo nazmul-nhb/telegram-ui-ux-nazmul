@@ -37,11 +37,17 @@ const Chat = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <div ref={containerRef} className="h-screen w-[calc(100%-360px)] overflow-y-auto bg-[#338fec76] px-20">
+        <div ref={containerRef} className="h-screen w-[calc(100%-360px)] overflow-y-auto bg-chatBG px-20">
             {Object.keys(groupedMessages).map(date => (
                 <div key={date}>
-                    <div className="flex justify-center items-center sticky top-8 py-1.5 mx-auto z-10 font-semibold text-center">
-                        <span className="text-white bg-[#338fec4d] rounded-3xl px-3 py-1">{moment(date).format('MMMM DD')}</span> 
+                    <div className="flex justify-center items-center sticky top-8 py-1.5 mx-auto z-10 font-semibold text-center select-none">
+                        <span className="text-white bg-[#33ecd34d] rounded-3xl px-3 py-1 cursor-pointer">
+                            {moment(date).isSame(moment(), 'day')
+                                ? 'Today'
+                                : moment(date).isSame(moment().subtract(1, 'day'), 'day')
+                                    ? 'Yesterday'
+                                    : moment(date).format('MMMM DD')}
+                        </span>
                     </div>
                     {groupedMessages[date].map(msg => {
                         const isCurrentUser = msg.sender_id === currentUserId;
@@ -56,7 +62,7 @@ const Chat = () => {
                                     </Markdown>
                                     <span className="flex justify-end gap-1 text-xs select-none">
                                         {moment(msg?.created_at).format('hh:mm A')}
-                                        <FaCheckDouble/> 
+                                        <FaCheckDouble />
                                     </span>
                                 </div>
                             </div>

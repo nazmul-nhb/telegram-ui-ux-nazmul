@@ -26,6 +26,11 @@ export default {
       colors: {
         telegram: '#2ba3df',
       },
+      backgroundColor: {
+        chatBG: 'var(--chat-bg)',
+        sideBG: 'var(--side-bg)',
+        chatMenuBG: 'var(--chat-menu-bg)',
+      }
     },
   },
   plugins: [],

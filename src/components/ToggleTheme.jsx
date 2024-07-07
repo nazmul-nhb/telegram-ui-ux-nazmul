@@ -7,16 +7,16 @@ const ToggleTheme = () => {
     const [isAnimating, setIsAnimating] = useState(false);
     const [currentIcon, setCurrentIcon] = useState(
         theme === 'light'
-            ? <FaToggleOff className='' />
-            : <FaToggleOn className='' />);
+            ? <FaToggleOff className='text-[#c4c9cc]' />
+            : <FaToggleOn className='text-[#8774e1]' />);
 
     useEffect(() => {
         setIsAnimating(true);
         const timer = setTimeout(() => {
             setCurrentIcon(
                 theme === 'light'
-                    ? <FaToggleOff className='' />
-                    : <FaToggleOn className='' />);
+                    ? <FaToggleOff className='text-[#c4c9cc]' />
+                    : <FaToggleOn className='text-[#8774e1]' />);
             setIsAnimating(false);
         }, 500);
 

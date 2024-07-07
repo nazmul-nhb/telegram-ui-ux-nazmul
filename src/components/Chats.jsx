@@ -62,9 +62,9 @@ const Chats = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <section className="flex flex-col gap-2 bg-white border border-telegram p-2 h-screen overflow-y-auto">
+        <section className="flex flex-col bg-sideBG gap-2 p-2 h-screen overflow-y-auto">
             {chats?.map(chat => (<NavLink
-                className={({ isActive }) => isActive ? 'bg-[#3390ec] p-2 rounded-lg text-white' : 'p-2 rounded-lg hover:bg-[#e5e5e6] transition-all duration-500'} to={`/chat/${chat?.id}`} key={chat?.id}>
+                className={({ isActive }) => isActive ? 'bg-chatMenuBG p-2 rounded-lg text-white' : 'p-2 rounded-lg hover:bg-[#e5e5e671] transition-all duration-500'} to={`/chat/${chat?.id}`} key={chat?.id}>
                 <div className="flex gap-1 items-center select-none">
                     {/* username initials */}
                     <div
