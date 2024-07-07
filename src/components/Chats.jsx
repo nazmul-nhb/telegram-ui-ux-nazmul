@@ -64,12 +64,12 @@ const Chats = () => {
     return (
         <section className="flex flex-col gap-2 bg-white border border-telegram p-2 h-screen overflow-y-auto">
             {chats?.map(chat => (<NavLink
-                className={({ isActive }) => isActive ? 'bg-[#3390ec] p-2 rounded-lg text-white' : 'p-2 hover: transition-all duration-500 hover:text-blue-400'} to={`/chat/${chat?.id}`} key={chat?.id}>
+                className={({ isActive }) => isActive ? 'bg-[#3390ec] p-2 rounded-lg text-white' : 'p-2 rounded-lg hover:bg-[#e5e5e6] transition-all duration-500'} to={`/chat/${chat?.id}`} key={chat?.id}>
                 <div className="flex gap-1 items-center select-none">
                     {/* username initials */}
                     <div
                         className={`rounded-full aspect-square w-16 flex items-center justify-center font-bold text-white text-2xl`}
-                        style={{ backgroundColor: getColorForInitial(chat?.creator?.name?.charAt(0) || 'A'), boxShadow: `0 8px 8px -6px ${getColorForInitial(chat?.creator?.name?.charAt(0) || 'A') }` }}
+                        style={{ backgroundColor: getColorForInitial(chat?.creator?.name?.charAt(0) || 'A'), boxShadow: `0 6px 6px -4px ${getColorForInitial(chat?.creator?.name?.charAt(0) || 'A') }` }}
                     >
                         {chat?.creator?.name?.split(' ').map(part => part[0]).join('') || 'A'}
                     </div>
