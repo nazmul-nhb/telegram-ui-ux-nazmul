@@ -1,9 +1,11 @@
-import Telegram from '../Telegram';
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
 
 const Root = () => {
     return (
-        <main className='max-w-[1920px]'>
-           <Telegram/> 
+        <main className='max-w-[1920px] h-screen flex gap-1'>
+            <Sidebar />
+            <Outlet />
         </main>
     );
 };
