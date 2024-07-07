@@ -1,8 +1,10 @@
 import Chats from "./Chats";
+import Menubar from "./Menubar";
 
 const Sidebar = () => {
     return (
         <section className="border w-[360px]">
+            <Menubar/>
             <Chats/>
         </section>
     );
