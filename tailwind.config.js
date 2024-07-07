@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        roboto: '"Roboto", sans-serif;'
+      },
       colors: {
         telegram: '#2ba3df',
       },

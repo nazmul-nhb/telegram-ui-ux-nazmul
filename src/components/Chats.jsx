@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import moment from "moment";
 import SampleChat from "./SampleChat";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Function to generate colors based on initials
 const getColorForInitial = (initial) => {
@@ -63,17 +63,18 @@ const Chats = () => {
 
     return (
         <section className="flex flex-col gap-4 bg-white border border-telegram p-2 h-screen overflow-y-auto">
-            {chats?.map(chat => (<Link to={`/chat/${chat?.id}`} key={chat?.id}>
+            {chats?.map(chat => (<NavLink
+                className={({ isActive }) => isActive ? 'bg-[#8774e1] p-2 rounded-lg text-white' : 'hover:border-b-2 border-b-2 border-transparent hover:border-white font-semibold flex items-center gap-2 transition-all duration-500 text-gray-400 hover:text-white'} to={`/chat/${chat?.id}`} key={chat?.id}>
                 <div className="flex gap-1 items-center select-none">
                     {/* username initials */}
                     <div
                         className={`rounded-full aspect-square w-16 flex items-center justify-center font-bold text-white text-2xl`}
-                        style={{ backgroundColor: getColorForInitial(chat?.creator?.name?.charAt(0) || 'A') }}
+                        style={{ backgroundColor: getColorForInitial(chat?.creator?.name?.charAt(0) || 'A'), boxShadow: `0 8px 8px -6px ${getColorForInitial(chat?.creator?.name?.charAt(0) || 'A') }` }}
                     >
                         {chat?.creator?.name?.split(' ').map(part => part[0]).join('') || 'A'}
                     </div>
+                    <div className="w-full">
                     {/* username & time */}
-                    <div className="w-full space-y-1">
                         <div className="flex gap-2 justify-between">
                             <h3 className="text-lg font-semibold">{chat?.creator?.name || 'Anonymous'}</h3>
                             <span>
@@ -87,7 +88,7 @@ const Chats = () => {
                         <SampleChat chatID={chat?.id} />
                     </div>
                 </div>
-            </Link>
+            </NavLink >
             ))}
         </section>
     );

@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-const SampleChat = ({chatID}) => {
+const SampleChat = ({ chatID }) => {
     const { data: chatMessages = [], isLoading } = useQuery({
         queryKey: ['chatMessages', chatID],
         queryFn: async () => {
@@ -34,7 +34,7 @@ const SampleChat = ({chatID}) => {
 
     return (
         <div className='text-gray-400'>
-            {latestMessage?.message.slice(0,36)}...
+            {latestMessage?.message.slice(0, 32)}...
         </div>
     );
 };
