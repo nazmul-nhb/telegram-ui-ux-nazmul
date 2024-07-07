@@ -1,8 +1,8 @@
 
 const Telegram = () => {
     return (
-        <div className="w-3/4 text-telegram">
-            Telegram Replica
+        <div className="text-telegram h-screen overflow-y-auto">
+            Welcome to Telegram!
         </div>
     );
 };
