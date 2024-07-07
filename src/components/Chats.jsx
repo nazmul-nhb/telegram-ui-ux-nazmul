@@ -62,9 +62,9 @@ const Chats = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <section className="flex flex-col gap-4 bg-white border border-telegram p-2 h-screen overflow-y-auto">
+        <section className="flex flex-col gap-2 bg-white border border-telegram p-2 h-screen overflow-y-auto">
             {chats?.map(chat => (<NavLink
-                className={({ isActive }) => isActive ? 'bg-[#8774e1] p-2 rounded-lg text-white' : 'hover:border-b-2 border-b-2 border-transparent hover:border-white font-semibold flex items-center gap-2 transition-all duration-500 text-gray-400 hover:text-white'} to={`/chat/${chat?.id}`} key={chat?.id}>
+                className={({ isActive }) => isActive ? 'bg-[#3390ec] p-2 rounded-lg text-white' : 'p-2 hover: transition-all duration-500 hover:text-blue-400'} to={`/chat/${chat?.id}`} key={chat?.id}>
                 <div className="flex gap-1 items-center select-none">
                     {/* username initials */}
                     <div
@@ -79,7 +79,7 @@ const Chats = () => {
                             <h3 className="text-lg font-semibold">{chat?.creator?.name || 'Anonymous'}</h3>
                             <span>
                                 {moment(chat?.creator?.updated_at).isSame(moment(), 'day')
-                                    ? moment(chat?.creator?.updated_at).format('HH:mm A')
+                                    ? moment(chat?.creator?.updated_at).format('hh:mm A')
                                     : moment(chat?.creator?.updated_at).isSame(moment().subtract(1, 'day'), 'day')
                                         ? 'Yesterday'
                                         : moment(chat?.creator?.updated_at).format('MMM D, YYYY')}

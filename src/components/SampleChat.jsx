@@ -33,7 +33,7 @@ const SampleChat = ({ chatID }) => {
     }
 
     return (
-        <div className='text-gray-400'>
+        <div className='text-[#aeb0b3]'>
             {latestMessage?.message.slice(0, 32)}...
         </div>
     );
