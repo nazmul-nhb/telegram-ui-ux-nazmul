@@ -43,20 +43,18 @@ This project aims to create a pixel-perfect replica of the Telegram messaging ap
     npm install
     ```
 
-3. **Set Up Environment Variables**: Create a `.env.local` file in the root directory and add the necessary environment variables. (**Important!**)
-
-4. **Run the Application**:
+3. **Run the Application**:
 
     ```sh
     npm run dev -- --host
     ```
 
-5. **Access the Site**: Open your browser and go to `http://localhost:5173/` or `http://192.168.1.12:5173/` from other devices on the same network to view the application.
+4. **Access the Site**: Open your browser and go to `http://localhost:5173/`, or `http://192.168.1.12:5173/` from other devices on the same network to view the application.
 
 ## Challenges and Considerations
 
 - **Time Constraints:** Given the 48-hour limit, some advanced features may not be fully implemented.
-- **UI/UX:** Efforts have been made to match the Telegram UI/UX as closely as possible within the given time frame. Some animations are missing.
+- **UI/UX:** Efforts have been made to match the Telegram UI/UX as closely as possible within the given time frame. Some animations are missing due to time constraints.
 - **API Integration:** Handled API integration to ensure data is fetched and displayed correctly.
 
 ## About Me
