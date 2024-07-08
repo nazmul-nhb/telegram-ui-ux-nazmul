@@ -2,6 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import ToggleTheme from './ToggleTheme';
 import { HiBars3 } from 'react-icons/hi2';
+import { LuBookmark, LuSettings } from 'react-icons/lu';
+import { RiInboxArchiveLine } from 'react-icons/ri';
+import { TbCircleDashed, TbSquareLetterA } from 'react-icons/tb';
+import { MdAnimation, MdOutlinePersonOutline } from 'react-icons/md';
+import { RxMoon } from 'react-icons/rx';
+import { BsQuestionCircle } from 'react-icons/bs';
+import { GoBug } from 'react-icons/go';
+import { FiPlusCircle } from 'react-icons/fi';
 
 const Menubar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -35,17 +43,17 @@ const Menubar = () => {
                     {showMenu && (
                         <div className={`absolute top-12 left-2 w-80 mt-1 bg-sideBG shadow-sm shadow-gray-600 rounded-lg select-none`}>
                             <ul className='p-1 space-y-1'>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Saved Messages</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Archived Chats</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">My Stories</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Contacts</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Settings</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 flex items-center justify-between gap-3 rounded-lg">Dark Mode <ToggleTheme /></li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Animations</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Telegram Features</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Report Bug</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Switch to A version</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg">Install App</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuBookmark /> Saved Messages</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><RiInboxArchiveLine /> Archived Chats</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbCircleDashed />My Stories</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdOutlinePersonOutline />Contacts</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuSettings />Settings</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 flex items-center justify-between gap-3 rounded-lg"><span className="flex items-center gap-6"><RxMoon />Dark Mode</span> <ToggleTheme /></li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdAnimation />Animations</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><BsQuestionCircle />Telegram Features</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><GoBug />Report Bug</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbSquareLetterA />Switch to A version</li>
+                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><FiPlusCircle />Install App</li>
                             </ul>
                         </div>
                     )}
