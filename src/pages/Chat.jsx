@@ -12,6 +12,7 @@ import { PiDotsThreeVertical } from "react-icons/pi";
 import { LuArrowLeft } from "react-icons/lu";
 import { HiOutlineEmojiHappy, HiOutlinePaperClip } from "react-icons/hi";
 import { BsFillMicFill } from "react-icons/bs";
+import { spinner } from "../components/Spinner";
 
 const useQueryParams = () => {
     return new URLSearchParams(useLocation().search);
@@ -46,11 +47,11 @@ const Chat = () => {
         return acc;
     }, {});
 
-    if (isLoading) return 'Loading...';
+    if (isLoading) return spinner;
 
     return (
         <div className="relative w-full md:w-[calc(100%-360px)] bg-telegramPattern bg-opacity-70">
-            <div className="flex items-center justify-between h-14 px-4 py-1 ml-[1px] shadow-md bg-sideBG sticky top-0 z-20">
+            <div className="flex items-center justify-between h-14 md:px-4 py-1 ml-[1px] shadow-md bg-sideBG sticky top-0 z-20">
                 <div className="flex items-center gap-4">
                     <LuArrowLeft onClick={() => navigate('/')} className="w-11 h-11 text-xl cursor-pointer p-2 hover:bg-[#2b2b2b75] rounded-full transition-all duration-500 md:hidden" />
                     <div className="flex items-center gap-3 cursor-pointer tracking-wide">
@@ -61,7 +62,7 @@ const Chat = () => {
                             {title?.split(' ').map(part => part[0]).join('')}
                         </div>
                         <div className="flex flex-col gap-0">
-                            <h1 className="text-xl font-semibold">{title}</h1>
+                            <h1 className="md:text-xl font-semibold">{title}</h1>
                             <h2 className="text-sm font-light">last seen recently</h2>
                         </div>
                     </div>
@@ -106,7 +107,7 @@ const Chat = () => {
             </div>
                 {/* Message Input Field */}
             <div className="w-[calc(100%-60px)] lg:w-full flex items-center px-2 lg:px-32 py-2 h-14 sticky bottom-2 z-30">
-                    <button className="hover:text-gray-800 transition-all duration-500 absolute left-36">
+                    <button className="hover:text-gray-800 transition-all duration-500 absolute left-6 lg:left-36">
                         <HiOutlineEmojiHappy className="text-2xl" />
                     </button>
                     <input
@@ -114,7 +115,7 @@ const Chat = () => {
                         placeholder="Message"
                         className="px-12 py-2 h-14 rounded-l-lg rounded-tr-lg bg-sideBG w-full focus:outline-none"
                     />
-                    <button className="hover:text-gray-800 transition-all duration-500 absolute right-36">
+                    <button className="hover:text-gray-800 transition-all duration-500 absolute right-6 lg:right-36">
                         <HiOutlinePaperClip className="text-2xl" />
                     </button>
                     <button className="bg-chatMenuBG text-white rounded-full p-2 absolute -right-12 lg:right-[78px] hover:opacity-90 transition-all duration-500">

@@ -28,9 +28,7 @@ const SampleChat = ({ chatID }) => {
 
     // console.log(latestMessage);
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
+    if (isLoading) return 'Loading...';
 
     return (
         <div className='text-[#aeb0b3]'>

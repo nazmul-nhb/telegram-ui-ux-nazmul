@@ -34,7 +34,7 @@ const Menubar = () => {
     }, [menubarRef]);
 
     return (
-        <div className={`p-2 h-14 bg-sideBG`}>
+        <div className={`py-2 pr-3 h-14 bg-sideBG`}>
             {/* Sandwich Menu Icon */}
             <div className="flex items-center gap-2">
                 <div ref={menubarRef}>
