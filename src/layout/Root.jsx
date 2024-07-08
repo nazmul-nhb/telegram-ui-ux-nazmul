@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar';
 
 const Root = () => {
     return (
-        <main className='max-w-[1920px] flex gap-1 mx-auto'>
+        <main className='max-w-[1920px] flex mx-auto'>
             <Sidebar />
             <Outlet />
         </main>

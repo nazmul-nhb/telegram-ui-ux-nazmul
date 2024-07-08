@@ -30,6 +30,9 @@ export default {
         chatBG: 'var(--chat-bg)',
         sideBG: 'var(--side-bg)',
         chatMenuBG: 'var(--chat-menu-bg)',
+      },
+      backgroundImage: {
+        telegramPattern: 'url("/src/assets/pattern.svg")',
       }
     },
   },

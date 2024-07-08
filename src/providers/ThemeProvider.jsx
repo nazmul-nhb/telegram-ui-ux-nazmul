@@ -8,9 +8,11 @@ const ThemeProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem('telegram-theme', theme);
-        document.documentElement.style.setProperty('--chat-bg', theme === 'light' ? '#338fec' : '#160918');
+        document.documentElement.style.setProperty('--chat-bg', theme === 'light' ? '#abc48afc' : '#160918');
         document.documentElement.style.setProperty('--side-bg', theme === 'light' ? '#fff' : '#212121');
-        document.documentElement.style.setProperty('--chat-menu-bg', theme === 'light' ? '#3390ec' : '#8774e1');
+        document.documentElement.style.setProperty('--msg-bg', theme === 'light' ? '#fff' : '#212121');
+        document.documentElement.style.setProperty('--msg-right', theme === 'light' ? '#e3fee0' : '#8774e1');
+        document.documentElement.style.setProperty('--chat-menu-bg', theme === 'light' ? '#3390ecfc' : '#8774e1');
 
         if (theme === 'dark') {
             document.documentElement.classList.add('text-[#fff]');
