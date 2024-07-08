@@ -10,6 +10,8 @@ import ScrollButton from "../components/ScrollButton";
 import { useRef } from "react";
 import { PiDotsThreeVertical } from "react-icons/pi";
 import { LuArrowLeft } from "react-icons/lu";
+import { HiOutlineEmojiHappy, HiOutlinePaperClip } from "react-icons/hi";
+import { BsFillMicFill } from "react-icons/bs";
 
 const useQueryParams = () => {
     return new URLSearchParams(useLocation().search);
@@ -23,7 +25,7 @@ const Chat = () => {
     const color = queryParams.get("color");
     const title = queryParams.get("title");
     const navigate = useNavigate();
-
+    
     const { data: rawMessages = [], isLoading } = useQuery({
         queryKey: ['rawMessages', id],
         queryFn: async () => {
@@ -47,7 +49,7 @@ const Chat = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <div className="relative w-full md:w-[calc(100%-360px)]">
+        <div className="relative w-full md:w-[calc(100%-360px)] bg-telegramPattern bg-opacity-70">
             <div className="flex items-center justify-between h-14 px-4 py-1 ml-[1px] shadow-md bg-sideBG sticky top-0 z-20">
                 <div className="flex items-center gap-4">
                     <LuArrowLeft onClick={() => navigate('/')} className="w-11 h-11 text-xl cursor-pointer p-2 hover:bg-[#2b2b2b75] rounded-full transition-all duration-500 md:hidden" />
@@ -68,7 +70,7 @@ const Chat = () => {
                     <PiDotsThreeVertical className="w-11 h-11 text-xl cursor-pointer p-2 hover:bg-[#2b2b2b75] rounded-full transition-all duration-500" />
                 </div>
             </div>
-            <div ref={containerRef} className="h-[calc(100vh-56px)] overflow-y-auto bg-telegramPattern bg-opacity-70 scrollbar-custom px-2 lg:px-24">
+            <div ref={containerRef} className="h-[calc(100vh-120px)] overflow-y-auto scrollbar-custom px-2 lg:px-32">
                 {Object.keys(groupedMessages).map(date => (
                     <div key={date}>
                         <div className="flex justify-center items-center sticky top-0 py-1 mx-auto z-10 font-semibold text-center select-none">
@@ -102,6 +104,23 @@ const Chat = () => {
                     </div>
                 ))}
             </div>
+                {/* Message Input Field */}
+            <div className="w-[calc(100%-60px)] lg:w-full flex items-center px-2 lg:px-32 py-2 h-14 sticky bottom-2 z-30">
+                    <button className="hover:text-gray-800 transition-all duration-500 absolute left-36">
+                        <HiOutlineEmojiHappy className="text-2xl" />
+                    </button>
+                    <input
+                        type="text"
+                        placeholder="Message"
+                        className="px-12 py-2 h-14 rounded-l-lg rounded-tr-lg bg-sideBG w-full focus:outline-none"
+                    />
+                    <button className="hover:text-gray-800 transition-all duration-500 absolute right-36">
+                        <HiOutlinePaperClip className="text-2xl" />
+                    </button>
+                    <button className="bg-chatMenuBG text-white rounded-full p-2 absolute -right-12 lg:right-[78px] hover:opacity-90 transition-all duration-500">
+                        <BsFillMicFill className="text-3xl" />
+                    </button>
+                </div>
             <ScrollButton containerRef={containerRef} />
         </div>
     );
