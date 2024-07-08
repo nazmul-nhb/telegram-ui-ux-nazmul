@@ -34,18 +34,18 @@ const Menubar = () => {
                     {/* Dropdown Menu */}
                     {showMenu && (
                         <div className={`absolute top-12 left-2 w-80 mt-1 bg-sideBG shadow-sm shadow-gray-600 rounded-lg select-none`}>
-                            <ul>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Saved Messages</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Archived Chats</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">My Stories</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Contacts</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Settings</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 flex items-center justify-between gap-3">Dark Mode <ToggleTheme /></li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Animations</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Telegram Features</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Report Bug</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Switch to A version</li>
-                                <li className="py-2 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer">Install App</li>
+                            <ul className='p-1 space-y-1'>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Saved Messages</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Archived Chats</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">My Stories</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Contacts</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Settings</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 flex items-center justify-between gap-3 rounded-lg">Dark Mode <ToggleTheme /></li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Animations</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Telegram Features</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Report Bug</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Switch to A version</li>
+                                <li className="py-1 px-4 hover:bg-[#9e9ea4e9] transition-all duration-700 cursor-pointer rounded-lg">Install App</li>
                             </ul>
                         </div>
                     )}

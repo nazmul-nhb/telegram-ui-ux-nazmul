@@ -62,7 +62,7 @@ const Chats = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <section className="flex flex-col bg-sideBG gap-2 p-2 h-[calc(100vh-60px)] overflow-y-auto">
+        <section className="flex flex-col bg-sideBG gap-2 p-2 h-[calc(100vh-60px)] overflow-y-auto scrollbar-custom">
             {chats?.map(chat => (<NavLink
                 className={({ isActive }) => isActive ? 'bg-chatMenuBG p-2 rounded-lg text-white' : 'p-2 rounded-lg hover:bg-[#e5e5e671] transition-all duration-500'} to={`/chat/${chat?.id}`} key={chat?.id}>
                 <div className="flex gap-1 items-center select-none">

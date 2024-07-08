@@ -37,7 +37,7 @@ const Chat = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <div ref={containerRef} className="h-screen w-[calc(100%-360px)] overflow-y-auto bg-chatBG px-20">
+        <div ref={containerRef} className="h-screen w-[calc(100%-360px)] overflow-y-auto bg-chatBG px-20 scrollbar-custom">
             {Object.keys(groupedMessages).map(date => (
                 <div key={date}>
                     <div className="flex justify-center items-center sticky top-8 py-1.5 mx-auto z-10 font-semibold text-center select-none">
