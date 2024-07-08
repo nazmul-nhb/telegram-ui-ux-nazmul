@@ -71,7 +71,7 @@ const Chats = () => {
                         className={({ isActive }) => isActive ? 'bg-chatMenuBG p-2 rounded-lg text-white' : 'p-2 rounded-lg hover:bg-[#e5e5e671] transition-all duration-500'}
                         to={`/chat/${chat?.id}?color=${encodeURIComponent(color)}&title=${encodeURIComponent(title)}`}
                     >
-                        <div className="flex gap-1 items-center select-none">
+                        <div className="flex gap-2 items-center select-none">
                             {/* username initials */}
                             <div
                                 className={`rounded-full aspect-square w-16 flex items-center justify-center font-bold text-white text-2xl`}
