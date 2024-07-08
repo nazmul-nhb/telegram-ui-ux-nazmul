@@ -71,7 +71,7 @@ const Chat = () => {
                     <PiDotsThreeVertical className="w-11 h-11 text-xl cursor-pointer p-2 hover:bg-[#2b2b2b75] rounded-full transition-all duration-500" />
                 </div>
             </div>
-            <div ref={containerRef} className="h-[calc(100vh-120px)] overflow-y-auto scrollbar-custom px-2 lg:px-32">
+            <div ref={containerRef} className="h-[calc(100vh-112px)] overflow-y-auto scrollbar-custom pb-16 px-2 lg:px-32">
                 {Object.keys(groupedMessages).map(date => (
                     <div key={date}>
                         <div className="flex justify-center items-center sticky top-0 py-1 mx-auto z-10 font-semibold text-center select-none">
