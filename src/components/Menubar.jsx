@@ -56,7 +56,7 @@ const Menubar = () => {
                     <input
                         type="text"
                         placeholder="Search"
-                        className={`bg-transparent w-full border border-gray-400 rounded-full py-1 px-4 pl-8 focus:outline-none focus:ring-2 focus:ring-blue-500 `}
+                        className={`bg-transparent w-full border border-gray-600 rounded-full py-2 px-5 pl-8 focus:outline-none focus:border-none focus:ring-1 focus:ring-telegramChange `}
                     />
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
                         <FaSearch />
