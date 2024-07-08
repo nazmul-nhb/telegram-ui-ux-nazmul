@@ -62,7 +62,7 @@ const Chats = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <section className="flex flex-col bg-sideBG gap-2 p-2 h-[calc(100vh-56px)] overflow-y-auto scrollbar-custom">
+        <section className="flex flex-col bg-sideBG gap-2 p-2 h-[calc(100vh-56px)] pb-16 overflow-y-auto scrollbar-custom">
             {chats?.map(chat => {
                 const color = getColorForInitial(chat?.creator?.name?.charAt(0) || 'A');
                 const title = chat?.creator?.name || 'Anonymous';
