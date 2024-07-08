@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { MdArrowDownward } from 'react-icons/md';
 
 const ScrollButton = ({ containerRef }) => {
-    const [showBottomButton, setShowBottomButton] = useState(true);
+    const [showBottomButton, setShowBottomButton] = useState(false);
 
 
     useEffect(() => {

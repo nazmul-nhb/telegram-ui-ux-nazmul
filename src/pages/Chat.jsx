@@ -1,14 +1,15 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import moment from "moment";
-import { FaCheckDouble, FaArrowLeft } from "react-icons/fa";
+import { FaCheckDouble } from "react-icons/fa";
 import ScrollButton from "../components/ScrollButton";
 import { useRef } from "react";
 import { PiDotsThreeVertical } from "react-icons/pi";
+import { LuArrowLeft } from "react-icons/lu";
 
 const useQueryParams = () => {
     return new URLSearchParams(useLocation().search);
@@ -21,6 +22,7 @@ const Chat = () => {
     const queryParams = useQueryParams();
     const color = queryParams.get("color");
     const title = queryParams.get("title");
+    const navigate = useNavigate();
 
     const { data: rawMessages = [], isLoading } = useQuery({
         queryKey: ['rawMessages', id],
@@ -45,10 +47,10 @@ const Chat = () => {
     if (isLoading) return 'Loading...';
 
     return (
-        <div className="relative w-[calc(100%-360px)]">
+        <div className="relative w-full md:w-[calc(100%-360px)]">
             <div className="flex items-center justify-between h-14 px-4 py-1 ml-[1px] shadow-md bg-sideBG sticky top-0 z-20">
                 <div className="flex items-center gap-4">
-                    <FaArrowLeft className="text-xl cursor-pointer md:hidden" />
+                    <LuArrowLeft onClick={() => navigate('/')} className="w-11 h-11 text-xl cursor-pointer p-2 hover:bg-[#2b2b2b75] rounded-full transition-all duration-500 md:hidden" />
                     <div className="flex items-center gap-3 cursor-pointer tracking-wide">
                         <div
                             className={`rounded-full aspect-square w-11 flex items-center justify-center font-bold text-white text-xl`}

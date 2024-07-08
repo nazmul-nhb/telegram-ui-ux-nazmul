@@ -3,7 +3,7 @@ import Menubar from "./Menubar";
 
 const Sidebar = () => {
     return (
-        <section className="w-[360px]">
+        <section className="w-full hidden md:block md:w-[360px]">
             <Menubar/>
             <Chats/>
         </section>
