@@ -32,7 +32,7 @@ const ScrollButton = ({ containerRef }) => {
     };
 
     return (
-        <div className={`fixed right-4 lg:right-20 bottom-[72px] text-3xl z-10`}>
+        <div className={`fixed right-3 lg:right-20 bottom-[72px] text-3xl z-10`}>
             {showBottomButton && (
                 <button onClick={scrollToBottom} className={`bg-sideBG shadow-sm p-2 rounded-full cursor-pointer hover:bg-[#f4f4f481] transition-all duration-500`}>
                     <MdArrowDownward />

@@ -38,22 +38,23 @@ const Menubar = () => {
             {/* Sandwich Menu Icon */}
             <div className="flex items-center gap-2">
                 <div ref={menubarRef}>
-                    <HiBars3 className="w-11 h-11 text-2xl cursor-pointer rounded-full p-2 hover:bg-[#2b2b2b75] flex-1" onClick={toggleMenu} />
+                    <HiBars3 className="w-11 h-11 text-2xl cursor-pointer rounded-full p-2 hover:bg-[#2b2b2b75] transition-all duration-500 flex-1" onClick={toggleMenu} />
                     {/* Dropdown Menu */}
                     {showMenu && (
-                        <div className={`absolute top-12 left-2 w-80 mt-1 bg-sideBG shadow-sm shadow-gray-600 rounded-lg select-none`}>
+                        <div className={`absolute top-12 left-2 w-80 mt-1 bg-sideBG shadow-sm shadow-gray-600 rounded-lg select-none transition-all duration-300 transform origin-top-left ${showMenu ? 'animate-slide-in' :  'animate-slide-out'
+                            }`}>
                             <ul className='p-1 space-y-1'>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuBookmark /> Saved Messages</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><RiInboxArchiveLine /> Archived Chats</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbCircleDashed />My Stories</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdOutlinePersonOutline />Contacts</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuSettings />Settings</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 flex items-center justify-between gap-3 rounded-lg"><span className="flex items-center gap-6"><RxMoon />Dark Mode</span> <ToggleTheme /></li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdAnimation />Animations</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><BsQuestionCircle />Telegram Features</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><GoBug />Report Bug</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbSquareLetterA />Switch to A version</li>
-                                <li className="py-1 px-4 hover:bg-[#e2e2e788] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><FiPlusCircle />Install App</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuBookmark />Saved Messages</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><RiInboxArchiveLine /> Archived Chats</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbCircleDashed />My Stories</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdOutlinePersonOutline />Contacts</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><LuSettings />Settings</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 flex items-center justify-between gap-3 rounded-lg"><span className="flex items-center gap-6"><RxMoon />Dark Mode</span> <ToggleTheme /></li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><MdAnimation />Animations</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><BsQuestionCircle />Telegram Features</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><GoBug />Report Bug</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><TbSquareLetterA />Switch to A version</li>
+                                <li className="py-1 px-4 hover:bg-[#e5e5e6b9] transition-all duration-700 cursor-pointer rounded-lg flex items-center gap-6"><FiPlusCircle />Install App</li>
                             </ul>
                         </div>
                     )}
