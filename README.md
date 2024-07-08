@@ -10,9 +10,9 @@ This project aims to create a pixel-perfect replica of the Telegram messaging ap
 
 ## Features
 
-**Responsive Design:** The UI is designed to be responsive and works seamlessly on both desktop and mobile devices.
-**Chats List:** Fetches and displays a list of chats using the provided API endpoint.
-**Messages:** Displays messages for each chat by fetching data from the provided API endpoint.
+- **Responsive Design:** The UI is designed to be responsive and works seamlessly on both desktop and mobile devices.
+- **Chats List:** Fetches and displays a list of chats using the provided API endpoint.
+- **Messages:** Displays messages for each chat by fetching data from the provided API endpoint.
 
 ## Technologies & Packages Used
 
