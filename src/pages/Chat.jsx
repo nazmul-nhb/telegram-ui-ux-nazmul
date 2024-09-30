@@ -13,6 +13,7 @@ import { LuArrowLeft } from "react-icons/lu";
 import { HiOutlineEmojiHappy, HiOutlinePaperClip } from "react-icons/hi";
 import { BsFillMicFill } from "react-icons/bs";
 import { spinner } from "../components/Spinner";
+import { getColorForFirstCharacter } from "color-generator-fl";
 
 const useQueryParams = () => {
     return new URLSearchParams(useLocation().search);
@@ -23,8 +24,8 @@ const Chat = () => {
     const currentUserId = 1; // update this id with actual user id later, because for every chat current user is different
     const containerRef = useRef(null);
     const queryParams = useQueryParams();
-    const color = queryParams.get("color");
-    const title = queryParams.get("title");
+    const chat_with = queryParams.get("chat_with");
+    const color = getColorForFirstCharacter(chat_with);
     const navigate = useNavigate();
     
     const { data: rawMessages = [], isLoading } = useQuery({
@@ -59,10 +60,10 @@ const Chat = () => {
                             className={`rounded-full aspect-square w-11 flex items-center justify-center font-bold text-white text-xl`}
                             style={{ backgroundColor: color, boxShadow: `0 4px 4px -4px ${color}` }}
                         >
-                            {title?.split(' ').map(part => part[0]).join('')}
+                            {chat_with?.split(' ').map(part => part[0]).join('')}
                         </div>
                         <div className="flex flex-col gap-0">
-                            <h1 className="md:text-xl font-semibold">{title}</h1>
+                            <h1 className="md:text-xl font-semibold">{chat_with}</h1>
                             <h2 className="text-sm font-light">last seen recently</h2>
                         </div>
                     </div>

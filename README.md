@@ -1,4 +1,4 @@
-# Telegram Replica for BeyondChats
+# Telegram Replica for Fun
 
 ## Overview
 
@@ -21,7 +21,8 @@ This project aims to create a pixel-perfect replica of the Telegram messaging ap
 - Axios (for API requests)
 - React Router (for navigation)
 - Tailwind CSS (for styling)
-- React Icons
+- [Color Generator](https://www.npmjs.com/package/color-generator-fl) (to generate unique colors for first letter of names)
+- React Icons (for icons)
 - TanStack (React) Query (for data fetching and caching)
 - Moment.js (for time & date manipulation)
 - React Markdown (for rendering markdown)
